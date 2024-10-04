@@ -33,20 +33,6 @@ logging.getLogger('httpx').setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 
-class UserCatalog:
-    def __init__(self):
-        self._info = {}
-
-    def find_user_info(self, user_id: int) -> dict | None:
-        return self._info.get(user_id)
-
-    def add_user_info(self, user_id: int, info: dict):
-        if user_id in self._info:
-            self._info[user_id].update(info)
-        else:
-            self._info[user_id] = info
-
-
 BOT_BIO = """Тут можеш спитати щодо розкладу своєї групи.
 Надсилай /start, щоб почати спілкування.
 Надсилай зворотній зв'язок @lavander_ale.
